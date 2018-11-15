@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router';
-import PhotoGrid from './PhotoGrid';
-import Single from './Single';
 
 class Main extends React.Component {
   render() {
@@ -10,8 +8,7 @@ class Main extends React.Component {
         <h1>
           <Link to="/">Reduxstagram</Link>
         </h1>
-        <PhotoGrid />
-        <Single />
+        {React.cloneElement(this.props.children, this.props)}
       </div>
     )
   }
